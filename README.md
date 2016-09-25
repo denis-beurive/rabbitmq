@@ -13,7 +13,7 @@ The procedure bellow assumes that you have installed the following tools:
 
 Procedure:
 
-    git clone https://github.com/dbeurive/rabbitmq.git
+    git clone git@github.com:denis-beurive/rabbitmq.git
     cd rabbitmq
     composer install
 
