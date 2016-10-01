@@ -4,6 +4,8 @@ This repository contains an introduction to the use of [RabbitMQ](https://www.ra
  
 Please note that the section that treats the installation of the server assumes that you are using _MAC OS X_.
 
+We also include few notes for Windows' users.
+
 # Installation
 
 The procedure bellow assumes that you have installed the following tools:
@@ -85,3 +87,29 @@ Then restart the server to see if it finds its configuration file...
 	sudo /opt/local/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/rabbitmq-server
 
 By looking at the LOG file we know that RabbitMq has found its configuration file.
+
+# Notes for windows.
+
+Under Windows, the server is installed here:
+
+    C:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.5
+
+## Enabling the admin GUI 
+
+See: https://www.rabbitmq.com/management.html
+
+    cd C:\Program Files\RabbitMQ Server\rabbitmq_server-3.6.5\sbin>
+    rabbitmq-plugins enable rabbitmq_management
+
+## Installing the command line interface
+
+Then, open a page to: `http://localhost:15672/`
+
+Get the CLI admin tool at the URL: `http://localhost:15672/Cli`
+
+Rename the file to `rabbitmqadmin.py`.
+
+Then create the BAT file to run it:
+
+    python "C:\Users\denis.beurive\Desktop\RabbitMQ\rabbitmqadmin.py" %*
+
