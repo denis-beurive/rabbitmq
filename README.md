@@ -88,6 +88,41 @@ Then restart the server to see if it finds its configuration file...
 
 By looking at the LOG file we know that RabbitMq has found its configuration file.
 
+## Common commands
+
+Stopping the server:
+
+    sudo /opt/local/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/rabbitmqctl stop
+
+Starting the server:
+
+    sudo /opt/local/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/rabbitmq-server -detached
+
+## Enabling the Admin tools
+
+Enable the admin GUI:
+
+    cd /opt/local/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin
+    rabbitmq-plugins enable rabbitmq_management
+
+Then restart the server.
+
+Download the CLI admin tool: 
+
+http://localhost:15672/cli/
+
+Then install the Python script.
+
+Rename it into `rabbitmqadmin.py`, and create the following script:
+
+    #!/bin/sh
+    
+    SOURCE="${BASH_SOURCE[0]}"
+    while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
+    PWD="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+    python $PWD/rabbitmqadmin.py $@
+
 # Notes for windows.
 
 Under Windows, the server is installed here:
@@ -111,5 +146,7 @@ Rename the file to `rabbitmqadmin.py`.
 
 Then create the BAT file to run it:
 
-    python "C:\Users\denis.beurive\Desktop\RabbitMQ\rabbitmqadmin.py" %*
+    @ECHO OFF  
+    set PWD=%~dp0
+    python "%PWD%\\rabbitmqadmin.py" %*
 
