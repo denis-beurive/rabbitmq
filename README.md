@@ -107,7 +107,7 @@ Enable the admin GUI:
 
 Then restart the server.
 
-Download the CLI admin tool: `[http://localhost:15672/cli/](http://localhost:15672/cli/)`
+Download the CLI admin tool: [http://localhost:15672/cli/](http://localhost:15672/cli/)
 
 Then install the Python script.
 
@@ -136,9 +136,9 @@ See: https://www.rabbitmq.com/management.html
 
 ## Installing the command line interface
 
-Then, open a page to: `[http://localhost:15672/](http://localhost:15672/)`
+Then, open a page to: [http://localhost:15672/](http://localhost:15672/)
 
-Get the CLI admin tool at the URL: `[http://localhost:15672/cli/](http://localhost:15672/cli/)`
+Get the CLI admin tool at the URL: [http://localhost:15672/cli/](http://localhost:15672/cli/)
 
 Rename the file to `rabbitmqadmin.py`.
 
